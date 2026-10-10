@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>VME Pumps Supply Chain Training Programme</title>
-<meta name="description" content="Preview of the VME Pumps Supply Chain Training Programme website.">
+<meta name="description" content="VME Pumps Supply Chain Training Programme: learn the process in VMErp, work as a VME employee, mentor others and land a 9–5 hybrid or remote job.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231F4E5F'/%3E%3Crect x='14' y='46' width='36' height='5' rx='2.5' fill='%23B45309'/%3E%3C/svg%3E">
 <style>:root{--teal:#1F4E5F;--navy:#1F3864;--amber:#B45309;--amber-dark:#92400E;--brown:#6B3A0A;--ink:#1B2A31;--muted:#4A5C65;--bg:#F4F7F8;--line:#D5DFE3;--amber-t:#FBEBD9;--teal-t:#E3EEF1;--white:#fff;--radius:12px;--shadow:0 1px 2px rgba(16,40,50,.08),0 4px 14px rgba(16,40,50,.06)}
 *,*::before,*::after{box-sizing:border-box}
@@ -36,6 +36,18 @@ p{margin:0 0 1em}
 .nav a.btn{color:#fff;padding:.55rem 1rem;margin-left:.35rem}
 .nav a.btn:hover{background:var(--amber-dark);color:#fff}
 .nav a:hover{background:var(--teal-t);color:var(--teal)}
+.nav a.erp-btn{background:var(--teal);border-color:var(--teal);display:inline-flex;align-items:center;gap:.4rem}
+.nav a.erp-btn:hover{background:#163A47;border-color:#163A47;color:#fff}
+.nav a.erp-btn svg{flex:none;max-width:none}
+.nav a.erp-btn + .btn{margin-left:.35rem}
+.site-header .wrap{max-width:1400px}
+@media (min-width:1361px){
+ .nav{flex-wrap:nowrap}
+ .nav a{white-space:nowrap;font-size:.95rem;padding:.5rem .5rem}
+ .nav a.btn{padding:.55rem .9rem;margin-left:.25rem}
+ .brand{max-width:11.5rem;flex:none}
+}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .nav a[aria-current=page]{color:var(--teal);font-weight:700;box-shadow:inset 0 -3px 0 var(--amber);border-radius:0}
 .menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:8px;padding:.5rem .8rem;font:inherit;font-size:1rem;color:var(--teal);cursor:pointer}
 .btn{display:inline-block;background:var(--amber);color:#fff;text-decoration:none;font-weight:700;padding:.8rem 1.4rem;border-radius:10px;border:2px solid var(--amber);font-size:1.05rem;cursor:pointer;font-family:inherit;line-height:1.2;transition:background .15s}
@@ -45,14 +57,15 @@ p{margin:0 0 1em}
 .btn.outline:hover{background:rgba(255,255,255,.14);color:#fff}
 .btn.outline-dark{background:transparent;color:var(--teal);border-color:var(--teal)}
 .btn.outline-dark:hover{background:var(--teal-t);color:var(--teal)}
-@media (max-width:1060px){
+@media (max-width:1360px){
  .brand{flex:1 1 0;min-width:0;max-width:none}
  .js .menu-btn{display:block}
  .js .nav{display:none;width:100%;flex-direction:column;align-items:stretch;padding:.5rem 0 1rem}
  .js .nav.open{display:flex}
  .js .nav a{padding:.8rem .6rem;border-bottom:1px solid var(--line);border-radius:0}
  .js .nav a[aria-current=page]{box-shadow:none;border-left:4px solid var(--amber);padding-left:.8rem}
- .js .nav .btn{margin-top:.75rem;text-align:center}
+ .js .nav .btn{margin-top:.75rem;text-align:center;margin-left:0;justify-content:center;border-radius:10px}
+ .js .nav a.erp-btn + .btn{margin-left:0}
 }
 /* hero */
 .hero{background:linear-gradient(135deg,#1F4E5F 0%,#17394A 100%);color:#fff;padding:4rem 0 4.5rem}
@@ -226,8 +239,6 @@ legend{font-weight:700;padding:0;margin-bottom:.35rem;color:var(--ink)}
 html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 80px);background:#fff}
 body{background:#fff}
 .site-header{top:env(safe-area-inset-top,0px)}
-.preview-bar{background:#FBEBD9;color:#6B3A0A;border-bottom:1px solid #E9C9A2;font-size:.95rem;padding:.45rem 1rem;text-align:center}
-.preview-bar b{font-weight:700}
 .page[hidden]{display:none}
 #main:focus{outline:none}
 /* VMErp update: function colours, flow, network, screen mock */
@@ -294,12 +305,12 @@ body{background:#fff}
 </style>
 </head>
 <body>
-<div class="preview-bar" role="note"><b>Preview.</b> This is a one-file preview of the website. The enquiry form shows its thank-you page but does not send anything. To enquire now, email admin@vmecareer.co.uk or call 07877 966243.</div>
+
 <a class="skip" href="#main" onclick="document.getElementById('main').focus();return false;">Skip to main content</a>
 <header class="site-header"><div class="wrap">
 <a class="brand" href="#/" aria-label="VME Pumps Supply Chain Training Programme, home"><span class="logo-mark"><svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><circle cx="50" cy="50" r="49" fill="#0F2F3A"/><circle cx="50" cy="50" r="45" fill="none" stroke="#EA580C" stroke-width="3"/><path fill="#EA580C" d="M59.2,50.0Q78.4,53.0 74.6,77.3L62.6,84.6Q68.3,65.4 59.6,55.5ZM54.6,58.0Q61.6,76.1 38.6,85.0L26.3,78.2Q45.8,73.6 50.0,61.0ZM45.4,58.0Q33.2,73.1 14.0,57.7L13.8,43.6Q27.5,58.2 40.4,55.5ZM40.8,50.0Q21.6,47.0 25.4,22.7L37.4,15.4Q31.7,34.6 40.4,44.5ZM45.4,42.0Q38.4,23.9 61.4,15.0L73.7,21.8Q54.2,26.4 50.0,39.0ZM54.6,42.0Q66.8,26.9 86.0,42.3L86.2,56.4Q72.5,41.8 59.6,44.5Z"/><circle cx="50" cy="50" r="10" fill="#fff"/><circle cx="50" cy="50" r="4" fill="#0F2F3A"/></svg></span><span>VME Pumps Supply Chain Training</span></a>
 <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="site-nav" type="button">Menu</button>
-<nav class="nav" id="site-nav" aria-label="Main"><a href="#/programme">The Programme</a><a href="#/how-it-works">How It Works</a><a href="#/career-support">Career Support</a><a href="#/who-its-for">Who It Is For</a><a href="#/sponsors-employers">Sponsors and Employers</a><a class="btn sm header-cta" href="#/enquire">Register your interest</a></nav>
+<nav class="nav" id="site-nav" aria-label="Main"><a href="#/">Home</a><a href="#/programme">The Programme</a><a href="#/how-it-works">How It Works</a><a href="#/career-support">Career Support</a><a href="#/who-its-for">Who It Is For</a><a href="#/sponsors-employers">Sponsors and Employers</a><a class="btn sm erp-btn" href="https://training.vmerp.co.uk" target="_blank" rel="noopener" title="Student sign-in to VMErp Training (opens in a new tab)">VMErp Login<svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr-only"> (opens in a new tab)</span></a><a class="btn sm header-cta" href="#/enquire">Register your interest</a></nav>
 </div></header>
 <main id="main" tabindex="-1">
 <div class="page" data-page="" hidden><div class="main-inner">
@@ -602,8 +613,9 @@ body{background:#fff}
 </ol></div></section>
 <section aria-labelledby="fh"><div class="wrap">
 <h2 id="fh">Register your interest</h2>
-<div id="send-error" class="err-sum" hidden role="alert"><h2>Your enquiry was not sent</h2><p style="margin:0">Sorry, something went wrong and your enquiry was not sent. Please try again.</p></div>
-<form class="enq" id="enquiry-form" action="send-enquiry.php" method="post" novalidate>
+<div id="send-error" class="err-sum" hidden role="alert"><h2>Your enquiry was not sent</h2><p style="margin:0">Sorry, something went wrong and your enquiry was not sent. Please try again, or email <a href="mailto:admin@vmecareer.co.uk">admin@vmecareer.co.uk</a> or call <a href="tel:+447877966243">07877 966243</a>.</p></div>
+<p class="help">Your enquiry goes straight to our team at admin@vmecareer.co.uk. Prefer to talk? Call 07877 966243.</p>
+<form class="enq" id="enquiry-form" action="https://formsubmit.co/admin@vmecareer.co.uk" method="post" novalidate>
 <div class="err-sum" id="error-summary" tabindex="-1" role="alert" hidden><h2>There is a problem</h2><ul id="error-list"></ul></div>
 <div class="field"><label for="name">Full name</label><input type="text" id="name" name="name" autocomplete="name" required></div>
 <div class="field"><label for="email">Email address</label><input type="email" id="email" name="email" autocomplete="email" required></div>
@@ -629,6 +641,7 @@ body{background:#fff}
 
 <section><div class="wrap prose" style="padding:3rem 0"><h1>Thank you</h1>
 <p class="lead">We have received your enquiry and will be in touch to arrange a short conversation.</p>
+<p>If you need us sooner, email <a href="mailto:admin@vmecareer.co.uk">admin@vmecareer.co.uk</a> or call <a href="tel:+447877966243">07877 966243</a>.</p>
 <p><a class="btn" href="#/">Back to the home page</a></p></div></section>
 </div></div>
 <div class="page" data-page="privacy" hidden><div class="main-inner">
@@ -636,7 +649,7 @@ body{background:#fff}
 <section><div class="wrap prose">
 <h2>What we collect</h2><p>When you use the enquiry form we collect your name, email address, optional phone number, how you are enquiring (for example as an individual, sponsor or employer), your short description of your background, and how you prefer to be contacted.</p>
 <h2>Why we collect it</h2><p>We use these details only to reply to your enquiry and to arrange a short conversation about whether the programme is right for you. We do not use them for marketing unless you separately agree to that.</p>
-<h2>Who sees it</h2><p>Your enquiry is sent to the programme team by email. We do not sell your details or share them with other organisations for their own purposes.</p>
+<h2>Who sees it</h2><p>Your enquiry is delivered to the programme team by email at admin@vmecareer.co.uk, using FormSubmit (formsubmit.co), a form-delivery service that passes the details on and does not use them for its own purposes. We do not sell your details or share them with other organisations for their own purposes.</p>
 <h2>Cookies and tracking</h2><p>This website does not set cookies or use analytics or advertising trackers. See the <a href="#/cookies">Cookie Policy</a>.</p>
 <h2>Your rights</h2><p>You can ask us to tell you what we hold about you, to correct it, or to delete it, by replying to any email we send you. You can also complain to the Information Commissioner&rsquo;s Office (ico.org.uk) if you are unhappy with how your information has been handled.</p>
 </div></section>
@@ -747,7 +760,18 @@ function go(initial){var r=parse();if(r)show(r,initial);else if(!initial)return;
 window.addEventListener('hashchange',function(){go(false);});
 go(true);
 var form=document.getElementById('enquiry-form');
-if(form){form.addEventListener('submit',function(e){if(!e.defaultPrevented){e.preventDefault();location.hash='#/thank-you';}});}
+if(form){form.addEventListener('submit',function(e){if(!e.defaultPrevented){e.preventDefault();
+ var v=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
+ var t=form.querySelector('input[name=type]:checked'),c=form.querySelector('input[name=contact]:checked');
+ if(v('website')){location.hash='#/thank-you';return;}
+ var btn=form.querySelector('button[type=submit]'),se=document.getElementById('send-error');se.hidden=true;btn.disabled=true;btn.textContent='Sending…';
+ fetch('https://formsubmit.co/ajax/admin@vmecareer.co.uk',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({
+  _subject:'Programme enquiry from '+v('name'),_template:'table',_captcha:'false',_replyto:v('email'),
+  'Name':v('name'),'Email':v('email'),'Phone':v('phone')||'(not given)','Enquiring as':t?t.value:'','Preferred contact':c?c.value:'','Where I am starting from':v('background'),'Consent':'Agreed to details being used to reply'})})
+ .then(function(r){return r.json().then(function(j){if(!r.ok||String(j.success)!=='true')throw new Error(j.message||'failed');});})
+ .then(function(){form.reset();location.hash='#/thank-you';})
+ .catch(function(){se.hidden=false;se.scrollIntoView({block:'center'});})
+ .finally(function(){btn.disabled=false;btn.textContent='Send enquiry';});}});}
 })();
 </script>
 </body>
