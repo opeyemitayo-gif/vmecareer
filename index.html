@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VME Pumps Supply Chain Training Programme</title>
+<meta name="description" content="Preview of the VME Pumps Supply Chain Training Programme website.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231F4E5F'/%3E%3Crect x='14' y='46' width='36' height='5' rx='2.5' fill='%23B45309'/%3E%3C/svg%3E">
+<style>:root{--teal:#1F4E5F;--navy:#1F3864;--amber:#B45309;--amber-dark:#92400E;--brown:#6B3A0A;--ink:#1B2A31;--muted:#4A5C65;--bg:#F4F7F8;--line:#D5DFE3;--amber-t:#FBEBD9;--teal-t:#E3EEF1;--white:#fff;--radius:12px;--shadow:0 1px 2px rgba(16,40,50,.08),0 4px 14px rgba(16,40,50,.06)}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;font-family:Calibri,Carlito,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;font-size:1.125rem;line-height:1.6;color:var(--ink);background:var(--white)}
+img,svg{max-width:100%}
+a{color:var(--teal);text-underline-offset:3px}
+a:hover{color:var(--amber-dark)}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-999px;top:0;background:var(--navy);color:#fff;padding:.75rem 1rem;z-index:100}
+.skip:focus{left:0}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 1.25rem}
+h1,h2,h3{line-height:1.2;color:var(--teal);margin:0 0 .6em}
+h1,h2{text-wrap:balance}
+h1{font-size:clamp(2.1rem,5vw,3.4rem);font-weight:700;letter-spacing:-.01em}
+h2{font-size:clamp(1.55rem,3.2vw,2.15rem);font-weight:700}
+h3{font-size:1.25rem;font-weight:700;color:var(--navy)}
+p{margin:0 0 1em}
+.lead{font-size:1.25rem;color:var(--muted);max-width:46rem}
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+.site-header .wrap{display:flex;align-items:center;gap:1rem;min-height:68px;flex-wrap:wrap;padding-top:.4rem;padding-bottom:.4rem}
+.brand{font-weight:700;color:var(--teal);text-decoration:none;font-size:.98rem;line-height:1.15;max-width:15rem;margin-right:auto;display:flex;align-items:center;gap:.6rem}
+.brand .mark{width:34px;height:34px;border-radius:8px;background:var(--teal);color:#fff;display:grid;place-items:center;font-size:.8rem;letter-spacing:.02em;flex:none}
+.brand small{display:block;font-weight:400;color:var(--muted);font-size:.8rem}
+.nav{display:flex;gap:.25rem;align-items:center;flex-wrap:wrap}
+.nav a{color:var(--ink);text-decoration:none;padding:.5rem .6rem;border-radius:8px;font-size:1rem}
+.nav a.btn{color:#fff;padding:.55rem 1rem;margin-left:.35rem}
+.nav a.btn:hover{background:var(--amber-dark);color:#fff}
+.nav a:hover{background:var(--teal-t);color:var(--teal)}
+.nav a[aria-current=page]{color:var(--teal);font-weight:700;box-shadow:inset 0 -3px 0 var(--amber);border-radius:0}
+.menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:8px;padding:.5rem .8rem;font:inherit;font-size:1rem;color:var(--teal);cursor:pointer}
+.btn{display:inline-block;background:var(--amber);color:#fff;text-decoration:none;font-weight:700;padding:.8rem 1.4rem;border-radius:10px;border:2px solid var(--amber);font-size:1.05rem;cursor:pointer;font-family:inherit;line-height:1.2;transition:background .15s}
+.btn:hover{background:var(--amber-dark);border-color:var(--amber-dark);color:#fff}
+.btn.sm{padding:.55rem 1rem;font-size:1rem}
+.btn.outline{background:transparent;color:#fff;border-color:#fff}
+.btn.outline:hover{background:rgba(255,255,255,.14);color:#fff}
+.btn.outline-dark{background:transparent;color:var(--teal);border-color:var(--teal)}
+.btn.outline-dark:hover{background:var(--teal-t);color:var(--teal)}
+@media (max-width:1060px){
+ .brand{flex:1 1 0;min-width:0;max-width:none}
+ .js .menu-btn{display:block}
+ .js .nav{display:none;width:100%;flex-direction:column;align-items:stretch;padding:.5rem 0 1rem}
+ .js .nav.open{display:flex}
+ .js .nav a{padding:.8rem .6rem;border-bottom:1px solid var(--line);border-radius:0}
+ .js .nav a[aria-current=page]{box-shadow:none;border-left:4px solid var(--amber);padding-left:.8rem}
+ .js .nav .btn{margin-top:.75rem;text-align:center}
+}
+/* hero */
+.hero{background:linear-gradient(135deg,#1F4E5F 0%,#17394A 100%);color:#fff;padding:4rem 0 4.5rem}
+.hero h1{color:#fff;margin-bottom:.4em}
+.hero .lead{color:#D6E6EB}
+.hero .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center}
+.chips{list-style:none;padding:0;margin:1.5rem 0;display:flex;flex-wrap:wrap;gap:.6rem}
+.chips li{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);padding:.35rem .9rem;border-radius:999px;font-size:.98rem}
+.reassure{color:#F2C79A;font-weight:700;margin:0 0 1.6rem}
+.btn-row{display:flex;flex-wrap:wrap;gap:.8rem}
+.fn-diagram{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.fn{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:var(--radius);padding:1rem}
+.fn svg{width:28px;height:28px;stroke:#F2C79A;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fn b{display:block;font-size:1.05rem;letter-spacing:.04em;text-transform:uppercase;margin:.3rem 0 .1rem}
+.fn span{font-size:.95rem;color:#D6E6EB}
+.fn-caption{grid-column:1/-1;text-align:center;font-size:.95rem;color:#D6E6EB;margin:.2rem 0 0}
+@media (max-width:860px){.hero .grid{grid-template-columns:1fr;gap:2rem}.hero{padding:2.5rem 0 3rem}}
+/* sections */
+section{padding:4rem 0}
+section.alt{background:var(--bg)}
+.page-head{background:var(--bg);padding:3rem 0 2.5rem;border-bottom:1px solid var(--line)}
+.page-head h1{font-size:clamp(2rem,4.5vw,2.8rem)}
+.page-head .lead{margin:0}
+.eyebrow{color:var(--amber-dark);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.85rem;margin:0 0 .6rem}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+@media (max-width:860px){.two{grid-template-columns:1fr;gap:1.5rem}section{padding:2.75rem 0}}
+.cards{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:1.5rem}
+.cards.c3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:1.4rem;box-shadow:var(--shadow);position:relative}
+.card h3{margin-bottom:.4rem}
+.card p:last-child{margin-bottom:0}
+.card .num{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--teal);color:#fff;font-weight:700;font-size:1.15rem;margin-bottom:.8rem}
+.card.top-teal{border-top:5px solid var(--teal)}
+.card.top-amber{border-top:5px solid var(--amber)}
+.card{display:flex;flex-direction:column}
+.card a.more{font-weight:700;display:inline-block;margin-top:auto;padding-top:.6rem}
+.card-link{display:block;color:inherit;text-decoration:none;height:100%}
+.card-link:hover{color:inherit}
+.card:has(.card-link):hover{border-color:var(--teal)}
+.fn-card svg{width:30px;height:30px;stroke:var(--teal);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fn-card h3{margin:.5rem 0 .2rem}
+/* callout */
+.callout{background:var(--amber-t);border-left:6px solid var(--amber);border-radius:0 var(--radius) var(--radius) 0;padding:1.3rem 1.5rem;margin:1.75rem 0}
+.callout .label{display:block;font-weight:700;color:var(--brown);margin-bottom:.4rem;font-size:1.1rem}
+.callout p{margin:0 0 .6em;color:var(--ink)}
+.callout p:last-child{margin-bottom:0}
+.callout ol{margin:.4rem 0 .8rem 1.2rem;padding:0}
+/* tables */
+.table-wrap{overflow-x:auto;margin:1.25rem 0;border:1px solid var(--line);border-radius:var(--radius);background:#fff}
+table{border-collapse:collapse;width:100%;font-size:1rem}
+caption{text-align:left;font-weight:700;color:var(--teal);padding:.8rem 1rem}
+th,td{padding:.8rem 1rem;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+thead th{background:var(--teal);color:#fff;font-weight:700;white-space:nowrap}
+tbody th{font-weight:700;color:var(--ink);background:#fff}
+tbody tr:nth-child(even) td,tbody tr:nth-child(even) th{background:#F7F9FA}
+tbody tr:last-child td,tbody tr:last-child th{border-bottom:0}
+@media (max-width:700px){
+ table.stack caption{display:block;width:100%}
+ table.stack thead{position:absolute;left:-9999px}
+ table.stack,table.stack tbody,table.stack tr,table.stack td,table.stack th{display:block;width:100%}
+ table.stack tr{padding:.8rem 0;border-bottom:3px solid var(--line)}
+ table.stack td,table.stack th{border:0;padding:.35rem 1rem;background:none!important}
+ table.stack td::before{content:attr(data-label);display:block;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--amber-dark)}
+ .table-wrap{border:0;background:none}
+}
+/* stages */
+.stages{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:1.5rem;counter-reset:s}
+.stage{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;box-shadow:var(--shadow);position:relative;border-top:5px solid var(--teal)}
+.stage:nth-child(3){border-top-color:var(--amber)}
+.stage .big{font-size:3rem;font-weight:700;color:var(--line);line-height:1;position:absolute;right:1.1rem;top:.8rem}
+.stage .focus{color:var(--amber-dark);font-weight:700;margin-bottom:.6rem}
+/* cta band */
+.cta-band{background:var(--teal);color:#fff;padding:3.5rem 0;text-align:center}
+.cta-band h2{color:#fff}
+.cta-band p{max-width:44rem;margin-left:auto;margin-right:auto;color:#E3EEF1}
+.cta-band .small{font-size:.98rem;margin-top:1rem;color:#F2C79A;margin-bottom:0}
+/* modules */
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.5rem 0 1rem}
+.filters button{font:inherit;font-size:1rem;background:#fff;border:2px solid var(--line);border-radius:999px;padding:.4rem 1rem;cursor:pointer;color:var(--ink)}
+.filters button[aria-pressed=true]{background:var(--teal);border-color:var(--teal);color:#fff;font-weight:700}
+.filters button:hover{border-color:var(--teal)}
+.mods{list-style:none;margin:0;padding:0;display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fill,minmax(310px,1fr))}
+.mod{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:1.3rem 1.3rem 1.4rem;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:.5rem}
+.mod[hidden]{display:none}
+.mod .top{display:flex;align-items:center;gap:.7rem}
+.mod .n{width:40px;height:40px;border-radius:10px;background:var(--navy);color:#fff;font-weight:700;display:grid;place-items:center;font-size:1.1rem;flex:none}
+.tag{display:inline-block;font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:.15rem .6rem;border-radius:999px;border:2px solid var(--teal);color:var(--teal)}
+.tag.manufacturing{border-color:var(--navy);color:var(--navy)}
+.tag.purchasing{border-color:#5B4B8A;color:#5B4B8A}
+.tag.finance{border-color:var(--amber-dark);color:var(--amber-dark)}
+.tag.capstone{background:var(--ink);border-color:var(--ink);color:#fff}
+.mod h3{margin:.2rem 0 0;font-size:1.2rem}
+.mod .outcome{margin:0;color:var(--muted);font-size:1rem}
+.feature{background:#fff;border:2px solid var(--amber);border-radius:var(--radius);padding:1.5rem;box-shadow:var(--shadow);margin:1.5rem 0}
+.feature h3{color:var(--brown);margin-bottom:.4rem}
+.feature p:last-child{margin:0}
+/* timeline */
+.timeline{list-style:none;padding:0;margin:1.5rem 0;position:relative}
+.timeline::before{content:"";position:absolute;left:19px;top:8px;bottom:8px;width:3px;background:var(--line)}
+.timeline li{position:relative;padding:0 0 1.4rem 3.6rem}
+.timeline li::before{counter-increment:t;content:counter(t);position:absolute;left:0;top:0;width:40px;height:40px;border-radius:50%;background:var(--teal);color:#fff;font-weight:700;display:grid;place-items:center}
+.timeline{counter-reset:t}
+.timeline b{display:block;color:var(--navy);font-size:1.15rem}
+.steps{list-style:none;padding:0;margin:1.5rem 0;display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));counter-reset:st}
+.steps li{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:1.3rem;box-shadow:var(--shadow);counter-increment:st}
+.steps li::before{content:counter(st);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--amber);color:#fff;font-weight:700;margin-bottom:.7rem}
+.steps b{display:block;color:var(--teal);font-size:1.15rem;margin-bottom:.2rem}
+ul.tick{list-style:none;padding:0;margin:1rem 0}
+ul.tick li{position:relative;padding:.35rem 0 .35rem 2rem}
+ul.tick li::before{content:"";position:absolute;left:.15rem;top:.8rem;width:.9rem;height:.5rem;border-left:3px solid var(--amber);border-bottom:3px solid var(--amber);transform:rotate(-45deg)}
+.fine{color:var(--muted);font-size:.98rem}
+/* faq */
+details.faq{background:#fff;border:1px solid var(--line);border-radius:var(--radius);margin:.7rem 0;box-shadow:var(--shadow)}
+details.faq summary{cursor:pointer;font-weight:700;color:var(--teal);padding:1rem 1.2rem;list-style:none;display:flex;justify-content:space-between;gap:1rem;align-items:center}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";font-size:1.5rem;line-height:1;color:var(--amber-dark);flex:none}
+details.faq[open] summary::after{content:"\2212"}
+details.faq .ans{padding:0 1.2rem 1.1rem}
+details.faq .ans p{margin:0}
+/* form */
+form.enq{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:1.75rem;box-shadow:var(--shadow);max-width:720px}
+.field{margin-bottom:1.3rem}
+.field label,.field legend{font-weight:700;display:block;margin-bottom:.35rem;color:var(--ink);padding:0}
+fieldset{border:0;margin:0 0 1.3rem;padding:0}
+.help{color:var(--muted);font-size:.95rem;margin:0 0 .4rem}
+input[type=text],input[type=email],input[type=tel],textarea{width:100%;font:inherit;font-size:1.05rem;padding:.7rem .8rem;border:2px solid #7C8F98;border-radius:8px;background:#fff;color:var(--ink)}
+input:focus,textarea:focus{outline:3px solid var(--amber);outline-offset:1px;border-color:var(--teal)}
+textarea{min-height:160px;resize:vertical}
+.opt{display:flex;gap:.6rem;align-items:flex-start;margin:.35rem 0}
+.opt input{width:1.2rem;height:1.2rem;margin-top:.3rem;accent-color:var(--teal);flex:none}
+.opt label{font-weight:400;margin:0}
+.count{text-align:right;color:var(--muted);font-size:.9rem}
+.err-msg{color:#9B1C1C;font-weight:700;margin:.3rem 0 0;font-size:.98rem}
+.err-msg::before{content:"\26A0\00a0"}
+.err-sum{background:#FDECEC;border:2px solid #9B1C1C;border-radius:var(--radius);padding:1rem 1.2rem;margin-bottom:1.5rem}
+.err-sum h2{font-size:1.15rem;color:#9B1C1C;margin-bottom:.4rem}
+.err-sum ul{margin:0;padding-left:1.2rem}
+.err-sum a{color:#9B1C1C;font-weight:700}
+.invalid{border-color:#9B1C1C!important}
+.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+.notice{background:var(--teal-t);border-left:6px solid var(--teal);border-radius:0 var(--radius) var(--radius) 0;padding:1rem 1.3rem;margin:1rem 0}
+/* footer */
+.site-footer{background:#14283F;color:#D6DEEB;padding:3rem 0 2rem;font-size:1rem}
+.site-footer a{color:#fff}
+.site-footer a:hover{color:#F2C79A}
+.site-footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2.5rem}
+.site-footer h2{color:#fff;font-size:1.05rem;margin-bottom:.7rem}
+.site-footer ul{list-style:none;margin:0;padding:0}
+.site-footer li{margin:.35rem 0}
+.site-footer .tagline{font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:.4rem}
+.site-footer .legal{border-top:1px solid rgba(255,255,255,.18);margin-top:2rem;padding-top:1.2rem;font-size:.92rem;color:#B9C6DA}
+@media (max-width:760px){.site-footer .cols{grid-template-columns:1fr;gap:1.5rem}}
+.prose{max-width:46rem}
+.wrap.prose{max-width:1120px}
+.wrap.prose>*{max-width:46rem}
+.wrap.prose>.table-wrap{max-width:none}
+legend{font-weight:700;padding:0;margin-bottom:.35rem;color:var(--ink)}
+.prose h2{margin-top:2rem;font-size:1.5rem}
+@media print{.site-header,.cta-band,.menu-btn,.filters{display:none}body{font-size:12pt}}
+
+@media (min-width:1061px){.site-header .wrap{flex-wrap:nowrap}.nav{flex-wrap:nowrap}.nav a{white-space:nowrap}}
+
+.area{margin:2rem 0 0}
+.area-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem .9rem;border-bottom:3px solid var(--amber);padding-bottom:.4rem;margin:0 0 1rem;font-size:1.5rem;color:var(--teal)}
+.area-h span{font-size:1rem;font-weight:400;color:var(--muted)}
+.mod h4{margin:.2rem 0 0;font-size:1.2rem;color:var(--navy);line-height:1.2}
+
+.sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 80px);background:#fff}
+body{background:#fff}
+.site-header{top:env(safe-area-inset-top,0px)}
+.preview-bar{background:#FBEBD9;color:#6B3A0A;border-bottom:1px solid #E9C9A2;font-size:.95rem;padding:.45rem 1rem;text-align:center}
+.preview-bar b{font-weight:700}
+.page[hidden]{display:none}
+#main:focus{outline:none}
+/* VMErp update: function colours, flow, network, screen mock */
+:root{--sell:#0369A1;--mfg:#A16207;--pur:#6D28D9;--fin:#047857;--cap:#BE185D;--sell-t:#E0F2FE;--mfg-t:#FEF3C7;--pur-t:#EDE9FE;--fin-t:#D1FAE5;--cap-t:#FCE7F3;--deep:#0F2F3A;--orange:#EA580C}
+.brand .logo-mark{width:36px;height:36px;flex:none;display:block}
+.flow{list-style:none;margin:2rem 0 0;padding:0;display:grid;gap:.75rem;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));counter-reset:fl}
+.flow li{counter-increment:fl;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:.9rem 1rem;display:flex;flex-direction:column;gap:.2rem;min-width:0}
+.flow li::before{content:counter(fl);display:grid;place-items:center;width:30px;height:30px;border-radius:50%;color:#fff;font-weight:700;font-size:.95rem;background:var(--c,var(--teal))}
+.flow b{font-size:1.02rem;color:var(--ink);line-height:1.25}
+.flow span{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--c,var(--teal))}
+.f-sell{--c:var(--sell)}.f-mfg{--c:var(--mfg)}.f-pur{--c:var(--pur)}.f-fin{--c:var(--fin)}
+.legend{display:flex;flex-wrap:wrap;gap:.5rem 1.2rem;margin:1rem 0 0;padding:0;list-style:none;font-size:.95rem;color:var(--muted)}
+.legend li{display:flex;align-items:center;gap:.45rem}
+.legend li::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--c)}
+.net{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin:1.75rem 0 0;align-items:stretch}
+.net .node{border-radius:var(--radius);padding:1.1rem;border:1px solid var(--line);background:#fff;min-width:0;position:relative}
+.net .node h3{font-size:1.05rem;margin:0 0 .35rem;color:var(--c)}
+.net .node ul{list-style:none;margin:0;padding:0;font-size:.98rem}
+.net .node li{padding:.15rem 0}
+.net .node.site{background:var(--c);border-color:var(--c);color:#fff}
+.net .node.site h3{color:#fff}
+.net .node.site p{margin:0;font-size:.98rem;color:#fff}
+.net .node:not(:last-child)::after{content:"\2192";position:absolute;right:-.85rem;top:50%;transform:translateY(-50%);color:var(--muted);font-weight:700;font-size:1.2rem}
+@media (max-width:860px){.net{grid-template-columns:1fr 1fr}.net .node::after{display:none}}
+@media (max-width:480px){.net{grid-template-columns:1fr}}
+.screen{margin:2rem 0 0;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);background:#fff}
+.screen .bar{display:flex;align-items:center;gap:.4rem;background:#E7EDF0;padding:.55rem .9rem}
+.screen .bar i{width:10px;height:10px;border-radius:50%;background:#C3CFD5;display:block}
+.screen .bar span{margin-left:auto;margin-right:auto;font-size:.85rem;color:var(--muted);background:#fff;border-radius:999px;padding:.15rem .9rem;font-family:ui-monospace,Menlo,Consolas,monospace}
+.screen .stripe{background:var(--orange);color:#fff;font-weight:700;font-size:.85rem;text-align:center;padding:.3rem .8rem;letter-spacing:.03em}
+.screen .body{display:grid;grid-template-columns:190px minmax(0,1fr)}
+.screen .side{background:var(--deep);color:#fff;padding:1rem .8rem;display:flex;flex-direction:column;gap:.25rem}
+.screen .side b{font-size:1.15rem;margin:0 0 .6rem .4rem}
+.screen .side span{font-size:.92rem;padding:.35rem .5rem;border-radius:6px;color:#D6E6EB}
+.screen .side span.on{background:rgba(255,255,255,.14);color:#fff;font-weight:700}
+.screen .main{padding:1.2rem 1.3rem;min-width:0}
+.screen .main h3{margin:0 0 .5rem;color:var(--ink);font-size:1.15rem}
+.pills{display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 1rem}
+.pills span{font-size:.82rem;font-weight:700;padding:.15rem .6rem;border-radius:999px;background:var(--t);color:var(--c)}
+.docflow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:.6rem}
+.docflow li{border:2px solid var(--c);border-radius:10px;padding:.55rem .6rem;text-align:center;background:#fff;min-width:0}
+.docflow b{display:block;font-size:.92rem;color:var(--ink)}
+.docflow code{font-size:.8rem;color:var(--muted);font-family:ui-monospace,Menlo,Consolas,monospace}
+.screen .lines{margin-top:1rem;border-top:1px solid var(--line);padding-top:.8rem;font-size:.92rem;display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;gap:.35rem 1rem;font-variant-numeric:tabular-nums}
+.screen .lines .h{font-weight:700;color:var(--muted);font-size:.8rem;text-transform:uppercase;letter-spacing:.05em}
+.screen .lines code{color:var(--sell);font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.85rem}
+.screen .lines .r{text-align:right}
+@media (max-width:700px){.screen .body{grid-template-columns:1fr}.screen .side{flex-direction:row;flex-wrap:wrap}.screen .side b{width:100%;margin:0 0 .3rem .4rem}.screen .lines{grid-template-columns:minmax(0,1fr) auto}.screen .lines .d,.screen .lines .q{display:none}}
+.fn-grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:1.5rem}
+.fn-grid .card h3{font-size:1.1rem}
+.fn-grid .card p{font-size:1rem}
+.tag.selling{border-color:var(--sell);color:var(--sell)}
+.contact-grid{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:1.5rem}
+.contact-card{background:#fff;border:1px solid var(--line);border-top:5px solid var(--c);border-radius:var(--radius);padding:1.3rem 1.4rem;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:.35rem;min-width:0}
+.contact-card h3{margin:0;font-size:1.15rem}
+.contact-card .val{font-size:1.2rem;font-weight:700;color:var(--c);overflow-wrap:anywhere;user-select:all}
+.contact-card p{margin:0;color:var(--muted);font-size:.98rem}
+.contact-card a{font-weight:700}
+.site-footer address{font-style:normal;line-height:1.9}
+.job-line{display:inline-block;background:#FB923C;color:#0F2F3A;border-radius:10px;padding:.6rem 1.1rem;margin:.4rem 0 0;font-size:1.25rem;line-height:1.3}
+.job-line strong{font-weight:800}
+.xfer-line{color:#fff;font-size:1.12rem;margin:.7rem 0 0;max-width:40rem}
+.xfer-line strong{font-weight:800}
+</style>
+</head>
+<body>
+<div class="preview-bar" role="note"><b>Preview.</b> This is a one-file preview of the website. The enquiry form shows its thank-you page but does not send anything. To enquire now, email admin@vmecareer.co.uk or call 07877 966243.</div>
+<a class="skip" href="#main" onclick="document.getElementById('main').focus();return false;">Skip to main content</a>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="#/" aria-label="VME Pumps Supply Chain Training Programme, home"><span class="logo-mark"><svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><circle cx="50" cy="50" r="49" fill="#0F2F3A"/><circle cx="50" cy="50" r="45" fill="none" stroke="#EA580C" stroke-width="3"/><path fill="#EA580C" d="M59.2,50.0Q78.4,53.0 74.6,77.3L62.6,84.6Q68.3,65.4 59.6,55.5ZM54.6,58.0Q61.6,76.1 38.6,85.0L26.3,78.2Q45.8,73.6 50.0,61.0ZM45.4,58.0Q33.2,73.1 14.0,57.7L13.8,43.6Q27.5,58.2 40.4,55.5ZM40.8,50.0Q21.6,47.0 25.4,22.7L37.4,15.4Q31.7,34.6 40.4,44.5ZM45.4,42.0Q38.4,23.9 61.4,15.0L73.7,21.8Q54.2,26.4 50.0,39.0ZM54.6,42.0Q66.8,26.9 86.0,42.3L86.2,56.4Q72.5,41.8 59.6,44.5Z"/><circle cx="50" cy="50" r="10" fill="#fff"/><circle cx="50" cy="50" r="4" fill="#0F2F3A"/></svg></span><span>VME Pumps Supply Chain Training</span></a>
+<button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="site-nav" type="button">Menu</button>
+<nav class="nav" id="site-nav" aria-label="Main"><a href="#/programme">The Programme</a><a href="#/how-it-works">How It Works</a><a href="#/career-support">Career Support</a><a href="#/who-its-for">Who It Is For</a><a href="#/sponsors-employers">Sponsors and Employers</a><a class="btn sm header-cta" href="#/enquire">Register your interest</a></nav>
+</div></header>
+<main id="main" tabindex="-1">
+<div class="page" data-page="" hidden><div class="main-inner">
+<section class="hero" aria-labelledby="h1"><div class="wrap grid">
+<div>
+<h1 id="h1">Learn the Process. Land the Job.</h1>
+<p class="lead">Master how a real business sells, builds, buys and gets paid, then get the CV, the interview practice and the support to turn it into a career.</p>
+<p class="job-line"><strong>Your route to a 9–5 hybrid or remote supply chain job</strong></p>
+<p class="xfer-line"><strong>Plus transferable skills that open doors in any organisation, not just supply chain</strong></p>
+<ul class="chips"><li>11 modules + capstone</li><li>Hands-on in VMErp</li><li>Learn &rarr; Work &rarr; Mentor</li><li>CV, interview and career support</li></ul>
+<p class="reassure">No prior experience assumed. No supply chain background required.</p>
+<div class="btn-row"><a class="btn" href="#/enquire">Register your interest</a><a class="btn outline" href="#/programme">See what you will learn</a></div>
+</div>
+<div class="fn-diagram" role="group" aria-label="The four functions of the order-to-cash process">
+<div class="fn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg><b>Selling</b><span>Quote, order, deliver, invoice</span></div>
+<div class="fn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg><b>Manufacturing</b><span>Plan, build, and stock</span></div>
+<div class="fn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><b>Purchasing</b><span>Source, order, and receive</span></div>
+<div class="fn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg><b>Finance</b><span>Revenue, credit, VAT, cash</span></div>
+<p class="fn-caption">Four functions. One connected process.</p>
+</div></div></section>
+
+<section aria-labelledby="trap"><div class="wrap two">
+<div><p class="eyebrow">The employability gap</p><h2 id="trap">The experience paradox</h2>
+<p>Entry-level supply chain vacancies routinely require prior operational experience, yet very few roles offer the exposure needed to acquire it. This experience paradox is the barrier the programme is designed to dismantle.</p>
+<p>For career changers the barrier is sharper still. Many bring proven transferable strengths (stakeholder management, problem resolution, commercial judgement and organisational discipline) but cannot yet evidence a working command of how a customer order is converted into a delivery, an invoice and, ultimately, cash. Without that evidence, recruiters discount capability that is genuinely there, and strong candidates are screened out before interview.</p></div>
+<div><div class="callout" style="margin-top:0"><span class="label">What actually separates hired candidates</span>
+<p>Selection rarely turns on raw ability. It turns on whether a candidate can answer three questions with precision, using real transactions and real consequences as evidence:</p>
+<ol><li>How does the end-to-end order-to-cash process operate, and where are value and risk created?</li><li>Where does your role sit, and which upstream and downstream teams depend on your work?</li><li>How would you diagnose and resolve an exception when the process breaks down?</li></ol>
+<p><strong>The programme is engineered in reverse from those three questions: every module, every placement task and every mentoring responsibility exists so that you can answer them with authority.</strong></p></div></div>
+</div></section>
+
+<section class="alt" aria-labelledby="four"><div class="wrap">
+<p class="eyebrow">The whole picture</p><h2 id="four">Four functions. One connected process.</h2>
+<p class="lead">Master how a real business sells, builds, buys and gets paid, the end-to-end experience employers actually hire supply chain people for.</p>
+<div class="cards">
+<div class="card fn-card top-teal"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg><h3>Selling</h3><p>Quote, order, deliver, invoice</p></div>
+<div class="card fn-card top-teal"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg><h3>Manufacturing</h3><p>Plan, build, and stock</p></div>
+<div class="card fn-card top-teal"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><h3>Purchasing</h3><p>Source, order, and receive</p></div>
+<div class="card fn-card top-teal"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg><h3>Finance</h3><p>Revenue, credit, VAT, cash</p></div>
+</div>
+<h3 style="margin-top:2.5rem">One order, start to finish</h3>
+<p class="fine" style="max-width:46rem">This is the order-to-cash journey you will run yourself in VMErp. Every step is a document you create, check and follow.</p>
+<ol class="flow" aria-label="The order-to-cash journey in eleven steps">
+<li class="f-sell"><b>Enquiry</b><span>Selling</span></li>
+<li class="f-sell"><b>Quotation</b><span>Selling</span></li>
+<li class="f-sell"><b>Sales order</b><span>Selling</span></li>
+<li class="f-sell"><b>Credit check</b><span>Selling</span></li>
+<li class="f-mfg"><b>Plan production</b><span>Manufacturing</span></li>
+<li class="f-pur"><b>Buy components</b><span>Purchasing</span></li>
+<li class="f-pur"><b>Goods receipt</b><span>Purchasing</span></li>
+<li class="f-mfg"><b>Build and stock</b><span>Manufacturing</span></li>
+<li class="f-sell"><b>Ship and deliver</b><span>Selling</span></li>
+<li class="f-fin"><b>Invoice</b><span>Finance</span></li>
+<li class="f-fin"><b>Get paid</b><span>Finance</span></li>
+</ol>
+</div></section>
+
+<section aria-labelledby="get"><div class="wrap">
+<p class="eyebrow">What you get</p><h2 id="get">A complete education, then the support to turn it into a job</h2>
+<h3 style="margin-top:1.5rem">The training</h3>
+<div class="cards c3" style="margin-top:.75rem">
+<div class="card top-teal"><h3>Eleven modules plus a capstone</h3><p>The full order-to-cash journey across Selling, Manufacturing, Purchasing and Finance</p></div>
+<div class="card top-teal"><h3>One consistent business</h3><p>The same customers, products, sites and suppliers throughout, not disconnected textbook examples</p></div>
+<div class="card top-teal"><h3>Delivered in VMErp</h3><p>You practise every process in VMErp, VME&rsquo;s own ERP system, not on paper. It uses the same concepts as SAP, Dynamics and ERPNext</p></div>
+<div class="card top-teal"><h3>Excel for everyday work</h3><p>Practical spreadsheet training for anyone who needs it: lists, formulas, filters, lookups, pivot tables and simple reports for day-to-day tasks</p></div>
+</div>
+<h3 style="margin-top:2rem">The career support</h3>
+<div class="cards" style="margin-top:.75rem">
+<div class="card top-amber"><h3>Job description workshops</h3><p>Real supply chain adverts broken down and mapped to what you have learned</p></div>
+<div class="card top-amber"><h3>CV development</h3><p>Your programme experience translated into language that gets past screening</p></div>
+<div class="card top-amber"><h3>Interview preparation</h3><p>Practice, mock interviews and worked answers drawn from your own module work</p></div>
+<div class="card top-amber"><h3>Ongoing career support</h3><p>Continued contact after you start work, through your first role and beyond</p></div>
+</div>
+<p style="margin-top:1.5rem"><strong>The first four points are the training. The last four are what turn training into a job</strong>, and they are the reason this is a career programme rather than a course. Together they give you <strong>transferable skills that are valued in any organisation, not just supply chain</strong>.</p>
+</div></section>
+
+<section class="alt" aria-labelledby="one"><div class="wrap">
+<p class="eyebrow">One business, learned thoroughly</p><h2 id="one">Learn one company until its processes are second nature</h2>
+<p class="lead">You will not learn generic theory. You will learn VME Pumps Ltd, a UK manufacturer and distributor of industrial pumps.</p>
+<div class="net" role="group" aria-label="How goods flow through VME Pumps">
+<div class="node" style="--c:var(--pur)"><h3>Suppliers</h3><ul><li>FlowCast Engineering</li><li>ElectroDrive Motors</li><li>Precision Sealing Technologies</li><li>Global Industrial Components</li></ul></div>
+<div class="node site" style="--c:var(--mfg)"><h3>Manchester</h3><p>Manufacturing plant M100. Every pump is built here.</p></div>
+<div class="node site" style="--c:var(--sell)"><h3>Birmingham</h3><p>Distribution plant B100. Stock and spares held closer to customers.</p></div>
+<div class="node" style="--c:var(--fin)"><h3>Customers</h3><ul><li>AquaPure</li><li>ChemPro</li><li>Northern Mining</li><li>FreshFoods</li><li>PetroFlow</li></ul></div>
+</div>
+<div class="table-wrap"><table><caption>VME Pumps Ltd at a glance</caption><tbody>
+<tr><th scope="row">Sites</th><td>Manchester (manufacturing) and Birmingham (distribution)</td></tr>
+<tr><th scope="row">Sales channels</th><td>UK Industrial, European Export, and Global Projects</td></tr>
+<tr><th scope="row">Routes to market</th><td>Wholesale, spare parts, and multi-month engineered projects</td></tr>
+<tr><th scope="row">Customers</th><td>AquaPure, ChemPro, Northern Mining, FreshFoods, PetroFlow, each with different terms and risk</td></tr>
+<tr><th scope="row">Products</th><td>Ten pump models, built from castings, impellers, shafts, bearings, seals, motors and baseplates</td></tr>
+<tr><th scope="row">Suppliers</th><td>FlowCast Engineering, ElectroDrive Motors, Precision Sealing Technologies, Global Industrial Components</td></tr>
+<tr><th scope="row">System</th><td>VMErp: live at vmerp.co.uk, training at training.vmerp.co.uk</td></tr>
+</tbody></table></div>
+<div class="callout"><span class="label">Why one business, not many examples</span><p>By Module 7 you will know that ElectroDrive supplies the motors, that a shortage of them stops a build at Manchester, and that the build was triggered by a customer order Manchester had no stock for. That is not memorisation. It is the shape of a supply chain, and once you can see it in one business you can see it in any business. It is also what lets you speak concretely at interview instead of in generalities.</p></div>
+</div></section>
+
+<section aria-labelledby="vmerp"><div class="wrap">
+<p class="eyebrow">Hands-on</p><h2 id="vmerp">Your workplace: VMErp</h2>
+<p class="lead">You will not learn the process from slides alone. Every module is practised in VMErp, the ERP system VME Pumps Ltd uses to run its business: its orders, production, purchasing, stock and invoices.</p>
+<p style="max-width:46rem">Participants work in VMErp Training, at training.vmerp.co.uk. It is the same application as the live system at vmerp.co.uk, with its own data and an orange &ldquo;Training system&rdquo; banner. What you practise is what the business actually does, and nothing you do there affects live customers or stock.</p>
+<figure class="screen" aria-label="Example VMErp Training screen showing a sales order and its document flow">
+<div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>training.vmerp.co.uk</span></div>
+<div class="stripe">TRAINING SYSTEM &middot; practise freely, nothing here affects live customers or stock</div>
+<div class="body">
+<div class="side" aria-hidden="true"><b>VMErp</b><span class="on">Sales</span><span>Purchasing</span><span>Manufacturing</span><span>Stock</span><span>Finance</span><span>Reports</span><span>Work instructions</span><span>Exercises</span></div>
+<div class="main">
+<h3>Sales order SO-0042 &middot; ChemPro Manufacturing</h3>
+<div class="pills"><span style="--t:var(--fin-t);--c:var(--fin)">Delivered</span><span style="--t:var(--sell-t);--c:var(--sell)">Standard order</span><span style="--t:var(--mfg-t);--c:var(--mfg)">Credit OK</span></div>
+<p class="eyebrow" style="margin-bottom:.5rem">Document flow</p>
+<ol class="docflow">
+<li style="--c:var(--sell)"><b>Quotation</b><code>QUO-0038</code></li>
+<li style="--c:var(--sell)"><b>Sales order</b><code>SO-0042</code></li>
+<li style="--c:var(--mfg)"><b>Works order</b><code>WO-0017</code></li>
+<li style="--c:var(--sell)"><b>Delivery</b><code>DEL-0029</code></li>
+<li style="--c:var(--fin)"><b>Invoice</b><code>INV-0031</code></li>
+<li style="--c:var(--fin)"><b>Payment</b><code>PAY-0024</code></li>
+</ol>
+<div class="lines" aria-label="Order lines">
+<span class="h">Product</span><span class="h d">Description</span><span class="h q r">Qty</span><span class="h r">Value</span>
+<code>FG-CP1000</code><span class="d">Chemical Process Pump</span><span class="q r">1</span><span class="r">&pound;42,000</span>
+<code>SP-SEAL-04</code><span class="d">Mechanical seal kit</span><span class="q r">4</span><span class="r">&pound;1,240</span>
+</div>
+</div></div>
+<figcaption class="sr">An illustrative screen. Order numbers are examples.</figcaption>
+</figure>
+<div class="fn-grid">
+<div class="card top-teal"><h3>The complete cycle</h3><p>Enquiry, quotation, sales order, production plan, purchasing, goods receipt, works order, delivery, invoice and payment, all in one system.</p></div>
+<div class="card top-teal"><h3>Document flow</h3><p>Every transaction linked from quotation to payment, so you can open any document and see exactly where an order is.</p></div>
+<div class="card top-teal"><h3>Real-world situations</h3><p>Rush and project orders, part shipments, stock transfers, proforma invoices, and returns with credit and debit memos.</p></div>
+<div class="card top-teal"><h3>Work instructions</h3><p>Step-by-step instructions for every process, written for the role that carries it out.</p></div>
+<div class="card top-teal"><h3>Business documents</h3><p>PDF quotations, order confirmations, delivery notes and invoices on VME letterhead, with weights, commodity codes and Incoterms.</p></div>
+<div class="card top-teal"><h3>Reports and analytics</h3><p>Excel reports grouped by Sales, Purchasing, Manufacturing and Finance, and a dashboard you can customise.</p></div>
+<div class="card top-teal"><h3>Controls and checks</h3><p>Warnings when a step is attempted out of sequence, and flags on documents that should not exist on their own.</p></div>
+<div class="card top-teal"><h3>Guided exercises</h3><p>Practise, make mistakes and repeat them in the training system without affecting the live business.</p></div>
+</div>
+<div class="callout"><span class="label">Why a real ERP system, and why this one</span><p>Employers ask for ERP experience because they want people who already think in documents, statuses and handoffs: who know that a delivery cannot be invoiced before it exists, and that a cancelled order has consequences downstream.</p><p>VMErp uses the same building blocks as SAP, Microsoft Dynamics, Oracle and ERPNext: sales orders, purchase orders, goods receipts, works orders and document flow. Once you have run the whole cycle in VMErp, picking up your employer&rsquo;s system means learning new screens, not a new way of working.</p></div>
+<div class="callout" style="border-left-color:var(--fin);background:var(--fin-t)"><span class="label" style="color:var(--fin)">Excel for everyday work</span><p>Not confident with spreadsheets? Participants who need it receive practical Excel training for day-to-day tasks: building and filtering lists, formulas and lookups, pivot tables, and simple reports and charts. You then use those skills on real VMErp data, such as Excel exports of orders, stock and invoices.</p></div>
+<div class="callout" style="border-left-color:var(--teal);background:var(--teal-t)"><span class="label" style="color:var(--teal)">Skills that travel beyond supply chain</span><p><strong>The skills you build are transferable to any establishment, not just supply chain.</strong> Understanding how an organisation sells, buys, produces and gets paid; working confidently in an ERP system, Excel, email and shared drives; communicating with colleagues and customers; solving problems; and leading others are valued in operations, administration, customer service, finance and project roles across every sector.</p></div>
+</div></section>
+
+<section class="alt" aria-labelledby="three"><div class="wrap">
+<p class="eyebrow">Three stages</p><h2 id="three">Learn it. Work it. Teach it.</h2>
+<div class="stages">
+<div class="stage"><span class="big" aria-hidden="true">1</span><h3>1. Learn</h3><p class="focus">Build the expertise</p><p>Work through all eleven modules in VMErp Training, understanding what each part of the process does, why it exists, and how it plays out with real customers and products.</p></div>
+<div class="stage"><span class="big" aria-hidden="true">2</span><h3>2. Work</h3><p class="focus">Employed by VME</p><p>Join VME Pumps Ltd as an employee and carry out day-to-day supply chain work under the supervision of an experienced manager. You work collaboratively in a team using the professional tools of the role (VMErp, email, shared drives and management reports) on live orders, purchases, deliveries and invoices. By the end of Stage 2 you have the skills to step into a supply chain role, practical examples to draw on at interview, and the confidence to use them.</p></div>
+<div class="stage"><span class="big" aria-hidden="true">3</span><h3>3. Mentor</h3><p class="focus">Lead and develop others</p><p>Remain with VME as an employee while mentoring newly enrolled participants through Stages 1 and 2: explaining the reasoning, reviewing their work and supporting their progress. In doing so you build the people and team-management skills that lead to supervisory and management roles.</p></div>
+</div>
+<p style="margin-top:1.5rem"><a href="#/how-it-works"><strong>See how it works &rarr;</strong></a></p>
+</div></section>
+
+<section aria-labelledby="hired"><div class="wrap">
+<p class="eyebrow">From learning to hired</p><h2 id="hired">This is where the programme differs</h2>
+<p class="lead">Learning the process is half the work. The other half is proving it to an employer, and that is supported deliberately, not left to you.</p>
+<div class="cards">
+<div class="card top-amber"><h3>Job description workshops</h3><p>Pull real adverts apart: what the employer is asking for, which module covers it, and what evidence you can point to.</p><a class="more" href="#/career-support/workshops">Find out more<span class="sr"> about job description workshops</span> &rarr;</a></div>
+<div class="card top-amber"><h3>CV development</h3><p>Turn each module into concrete capability, in the language the role uses.</p><a class="more" href="#/career-support/cv">Find out more<span class="sr"> about CV development</span> &rarr;</a></div>
+<div class="card top-amber"><h3>Interview preparation</h3><p>Competency answers, technical questions and mock interviews built from your own programme work.</p><a class="more" href="#/career-support/interviews">Find out more<span class="sr"> about interview preparation</span> &rarr;</a></div>
+<div class="card top-amber"><h3>Support after you start</h3><p>Help while applying, in your first weeks, through your first year and beyond.</p><a class="more" href="#/career-support/after">Find out more<span class="sr"> about support after you start</span> &rarr;</a></div>
+</div>
+<div class="callout"><span class="label">An honest note</span><p>No training programme can guarantee a job, and this one does not claim to. What it can do is make sure you understand the work, can evidence that understanding, can present it well, and are not on your own while you look. Those four things are what most candidates are missing, and they are precisely what this programme provides.</p></div>
+</div></section>
+
+<section class="cta-band" aria-labelledby="home-cta-h"><div class="wrap">
+<h2 id="home-cta-h">Learn the process. Land the job.</h2>
+<p>Eleven modules, a real business, hands-on practice in VMErp, and the CV, interview and career support to turn all of it into your first supply chain role, and the one after that.</p>
+<a class="btn" href="#/enquire">Register your interest</a>
+<p class="small">No prior experience assumed. Start at Module 0 and finish job-ready.</p></div></section></div></div>
+<div class="page" data-page="programme" hidden><div class="main-inner">
+<div class="page-head"><div class="wrap"><p class="eyebrow">The Programme</p><h1>What you will cover</h1><p class="lead">Eleven modules plus a capstone take you through the full order-to-cash journey across Selling, Manufacturing, Purchasing and Finance. Every module begins in plain business language before it becomes specific to any function. Work through them in order: later modules assume earlier ones, exactly as the real process does.</p></div></div>
+<section aria-labelledby="m0"><div class="wrap">
+<div class="feature"><p class="eyebrow">Start here</p><h2 id="m0" style="font-size:1.6rem">Module 0: Start here</h2>
+<p>Your starting point, sent to you when you enrol along with your programme materials. It introduces the order-to-cash journey and how the programme&rsquo;s three stages (Learn, Work, Mentor) fit together, so that Module 1 begins from a shared picture.</p></div>
+<h2 id="mods" style="margin-top:2.5rem">The eleven modules</h2>
+<p class="fine">Modules are grouped by function and numbered in the order you study them. Later modules build on earlier ones, exactly as the real process does.</p>
+<div class="area" aria-labelledby="area-selling"><h3 class="area-h" id="area-selling">Selling <span>Quote, order, deliver, invoice</span></h3><ol class="mods"><li class="mod" data-area="selling"><div class="top"><span class="n" aria-hidden="true">1</span><span class="tag selling">Selling</span></div><h4><span class="sr">Module 1: </span>Customers, Products &amp; Sales Structure</h4><p class="outcome"><strong>You will be able to:</strong> Explain who VME sells to and why wholesale, export and project business differ.</p></li><li class="mod" data-area="selling"><div class="top"><span class="n" aria-hidden="true">2</span><span class="tag selling">Selling</span></div><h4><span class="sr">Module 2: </span>Pricing, Quotations &amp; Sales Orders</h4><p class="outcome"><strong>You will be able to:</strong> Explain how a price is built and how an enquiry becomes a confirmed order.</p></li><li class="mod" data-area="selling"><div class="top"><span class="n" aria-hidden="true">3</span><span class="tag selling">Selling</span></div><h4><span class="sr">Module 3: </span>Credit Management &amp; Customer Risk</h4><p class="outcome"><strong>You will be able to:</strong> Explain how a business balances winning work against protecting its cash.</p></li><li class="mod" data-area="selling"><div class="top"><span class="n" aria-hidden="true">4</span><span class="tag selling">Selling</span></div><h4><span class="sr">Module 4: </span>Shipping, Delivery &amp; Communication</h4><p class="outcome"><strong>You will be able to:</strong> Explain where an order ships from and how the right paperwork reaches the right people.</p></li></ol></div><div class="area" aria-labelledby="area-manufacturing"><h3 class="area-h" id="area-manufacturing">Manufacturing <span>Plan, build, and stock</span></h3><ol class="mods"><li class="mod" data-area="manufacturing"><div class="top"><span class="n" aria-hidden="true">5</span><span class="tag manufacturing">Manufacturing</span></div><h4><span class="sr">Module 5: </span>Materials &amp; Bill of Materials</h4><p class="outcome"><strong>You will be able to:</strong> Describe what a product is built from and how that drives production and costing.</p></li><li class="mod" data-area="manufacturing"><div class="top"><span class="n" aria-hidden="true">6</span><span class="tag manufacturing">Manufacturing</span></div><h4><span class="sr">Module 6: </span>Planning &amp; Meeting Demand</h4><p class="outcome"><strong>You will be able to:</strong> Explain how a confirmed order becomes a production or stock decision.</p></li></ol></div><div class="area" aria-labelledby="area-purchasing"><h3 class="area-h" id="area-purchasing">Purchasing <span>Source, order, and receive</span></h3><ol class="mods"><li class="mod" data-area="purchasing"><div class="top"><span class="n" aria-hidden="true">7</span><span class="tag purchasing">Purchasing</span></div><h4><span class="sr">Module 7: </span>Suppliers &amp; Procurement</h4><p class="outcome"><strong>You will be able to:</strong> Describe how components are sourced to keep production running.</p></li><li class="mod" data-area="purchasing"><div class="top"><span class="n" aria-hidden="true">8</span><span class="tag purchasing">Purchasing</span></div><h4><span class="sr">Module 8: </span>Moving Stock Between Sites</h4><p class="outcome"><strong>You will be able to:</strong> Explain how finished stock moves between sites, ready to sell.</p></li></ol></div><div class="area" aria-labelledby="area-finance"><h3 class="area-h" id="area-finance">Finance <span>Revenue, credit, VAT, cash</span></h3><ol class="mods"><li class="mod" data-area="finance"><div class="top"><span class="n" aria-hidden="true">9</span><span class="tag finance">Finance</span></div><h4><span class="sr">Module 9: </span>Billing &amp; Revenue</h4><p class="outcome"><strong>You will be able to:</strong> Describe how a completed delivery becomes an accurate, correctly posted invoice.</p></li><li class="mod" data-area="finance"><div class="top"><span class="n" aria-hidden="true">10</span><span class="tag finance">Finance</span></div><h4><span class="sr">Module 10: </span>Getting Paid: Collections &amp; Cash</h4><p class="outcome"><strong>You will be able to:</strong> Explain how payment is tracked and collected, closing the loop.</p></li></ol></div><div class="area" aria-labelledby="area-capstone"><h3 class="area-h" id="area-capstone">Capstone <span>Follow one order through all four functions</span></h3><ol class="mods"><li class="mod" data-area="capstone"><div class="top"><span class="n" aria-hidden="true">11</span><span class="tag capstone">Capstone</span></div><h4><span class="sr">Module 11: </span>End-to-End Walkthrough</h4><p class="outcome"><strong>You will be able to:</strong> Follow one order through all four functions, start to finish.</p></li></ol></div>
+<div class="feature" style="margin-top:2rem"><p class="eyebrow">Bonus module</p><h3>Export, freight and warehouse administration</h3>
+<p>Covers export, freight forwarding, Incoterms, customs documentation and warehouse administration: the specialist knowledge that opens up logistics and shipping roles.</p></div>
+<div class="callout"><span class="label">The capstone is your interview material</span><p>Module 11 follows one order across all four functions: a customer order with no stock, a component shortage, a credit block and a payment query. You will have run that order yourself in VMErp, document by document. That single scenario answers most of the competency questions an entry-level supply chain interview will throw at you, because you can talk about it in genuine detail.</p></div>
+</div></section>
+<section class="alt" aria-labelledby="biz"><div class="wrap">
+<p class="eyebrow">Meet the business</p><h2 id="biz">Learn one company until its processes are second nature</h2>
+<p class="lead">You will not learn generic theory. You will learn VME Pumps Ltd, a UK manufacturer and distributor of industrial pumps.</p>
+<div class="table-wrap"><table><caption>VME Pumps Ltd at a glance</caption><tbody>
+<tr><th scope="row">Sites</th><td>Manchester (manufacturing) and Birmingham (distribution)</td></tr>
+<tr><th scope="row">Sales channels</th><td>UK Industrial, European Export, and Global Projects</td></tr>
+<tr><th scope="row">Routes to market</th><td>Wholesale, spare parts, and multi-month engineered projects</td></tr>
+<tr><th scope="row">Customers</th><td>AquaPure, ChemPro, Northern Mining, FreshFoods, PetroFlow, each with different terms and risk</td></tr>
+<tr><th scope="row">Products</th><td>Ten pump models, built from castings, impellers, shafts, bearings, seals, motors and baseplates</td></tr>
+<tr><th scope="row">Suppliers</th><td>FlowCast Engineering, ElectroDrive Motors, Precision Sealing Technologies, Global Industrial Components</td></tr>
+<tr><th scope="row">System</th><td>VMErp: live at vmerp.co.uk, training at training.vmerp.co.uk</td></tr>
+</tbody></table></div><div class="callout"><span class="label">Why one business, not many examples</span><p>By Module 7 you will know that ElectroDrive supplies the motors, that a shortage of them stops a build at Manchester, and that the build was triggered by a customer order Manchester had no stock for. That is not memorisation. It is the shape of a supply chain, and once you can see it in one business you can see it in any business. It is also what lets you speak concretely at interview instead of in generalities.</p></div></div></section>
+
+<section class="cta-band" aria-labelledby="programme-cta-h"><div class="wrap">
+<h2 id="programme-cta-h">Learn the process. Land the job.</h2>
+<p>Eleven modules, a real business, hands-on practice in VMErp, and the CV, interview and career support to turn all of it into your first supply chain role, and the one after that.</p>
+<a class="btn" href="#/enquire">Register your interest</a>
+<p class="small">No prior experience assumed. Start at Module 0 and finish job-ready.</p></div></section></div></div>
+<div class="page" data-page="how-it-works" hidden><div class="main-inner">
+<div class="page-head"><div class="wrap"><p class="eyebrow">How it works</p><h1>Learn it. Work it. Teach it.</h1><p class="lead">The programme follows a three-stage journey. Each stage builds on the one before, and the last one is what makes your understanding stand out.</p></div></div>
+<section aria-labelledby="st"><div class="wrap"><h2 id="st">The three stages</h2><div class="stages">
+<div class="stage"><span class="big" aria-hidden="true">1</span><h3>1. Learn</h3><p class="focus">Build the expertise</p><p>Work through all eleven modules in VMErp Training, understanding what each part of the process does, why it exists, and how it plays out with real customers and products.</p></div>
+<div class="stage"><span class="big" aria-hidden="true">2</span><h3>2. Work</h3><p class="focus">Employed by VME</p><p>Join VME Pumps Ltd as an employee and carry out day-to-day supply chain work under the supervision of an experienced manager. You work collaboratively in a team using the professional tools of the role (VMErp, email, shared drives and management reports) on live orders, purchases, deliveries and invoices. By the end of Stage 2 you have the skills to step into a supply chain role, practical examples to draw on at interview, and the confidence to use them.</p></div>
+<div class="stage"><span class="big" aria-hidden="true">3</span><h3>3. Mentor</h3><p class="focus">Lead and develop others</p><p>Remain with VME as an employee while mentoring newly enrolled participants through Stages 1 and 2: explaining the reasoning, reviewing their work and supporting their progress. In doing so you build the people and team-management skills that lead to supervisory and management roles.</p></div>
+</div>
+<div class="callout"><span class="label">From employee to team leader</span><p>Stage 2 gives you genuine employment history: a manager, a team, live transactions and the everyday tools of a supply chain office. Stage 3 adds leadership: guiding, reviewing and supporting the work of others while you continue in your role.</p><p>&ldquo;As a VME employee I processed live orders end to end, then mentored new starters and reviewed their work&rdquo; lands very differently from &ldquo;I completed a course.&rdquo;</p></div></div></section>
+<section class="alt" aria-labelledby="proc"><div class="wrap two">
+<div><p class="eyebrow">Business-process training</p><h2 id="proc">Learn the process, not just the software</h2></div>
+<div><p>This is business-process training. You learn how a business sells, builds, buys and gets paid, and why each step exists. You practise in VMErp Training, a copy of the ERP system VME uses to run its business, rather than on paper. VMErp uses the same building blocks as SAP, Microsoft Dynamics, Oracle and ERPNext, so the skills carry over to whichever system your employer runs. The aim is to understand the process behind the screens, not to configure software.</p>
+<p>Participants arrive in a role understanding the process, not just the software.</p></div>
+</div></section>
+<section aria-labelledby="asks"><div class="wrap prose">
+<p class="eyebrow">What it asks of you</p><h2 id="asks">Accessible, but not passive</h2>
+<p>The programme is genuinely accessible, but it is not passive. To get the outcome, expect to:</p>
+<ul class="tick">
+<li>Work through the modules in order. Later ones assume earlier ones, exactly as the real process does.</li>
+<li>Complete the practical activity and the VMErp exercises in every module, not just the reading.</li>
+<li>Take part in the job description workshops from the start, rather than leaving CV work until the end.</li>
+<li>Put yourself through mock interviews, including the uncomfortable ones.</li>
+<li>Reach Stage 3 and mentor someone else. This is a requirement, not an optional extra.</li>
+<li>Ask when something does not make sense. The programme reflects a real business, and real businesses have awkward edges.</li>
+</ul></div></section>
+
+<section class="cta-band" aria-labelledby="how-it-works-cta-h"><div class="wrap">
+<h2 id="how-it-works-cta-h">Learn the process. Land the job.</h2>
+<p>Eleven modules, a real business, hands-on practice in VMErp, and the CV, interview and career support to turn all of it into your first supply chain role, and the one after that.</p>
+<a class="btn" href="#/enquire">Register your interest</a>
+<p class="small">No prior experience assumed. Start at Module 0 and finish job-ready.</p></div></section></div></div>
+<div class="page" data-page="career-support" hidden><div class="main-inner">
+<div class="page-head"><div class="wrap"><p class="eyebrow">Career support</p><h1>From learning to hired</h1><p class="lead">Learning the process is half the work. The other half is proving it to an employer, and that is supported deliberately, not left to you.</p></div></div>
+<section id="workshops" aria-labelledby="w"><div class="wrap">
+<h2 id="w">Job description workshops, throughout the programme</h2>
+<div class="prose"><p>From early in Stage 1, you will work with real supply chain job adverts. Not as an afterthought at the end, but alongside the modules, so you learn the process and the vocabulary employers use for it at the same time.</p>
+<p>Each workshop takes a live advert and pulls it apart: what is this employer actually asking for, what does that phrase mean in practice, which module covers it, and what evidence can you point to?</p></div>
+<div class="table-wrap"><table class="stack"><caption>How an advert translates into what you can say</caption><thead><tr><th scope="col">The advert says</th><th scope="col">It actually means</th><th scope="col">Covered in</th><th scope="col">You will be able to say</th></tr></thead><tbody><tr><th scope="row" data-label="The advert says">&ldquo;Experience of order-to-cash&rdquo;</th><td data-label="It actually means">You understand the flow from enquiry through to payment</td><td data-label="Covered in">Modules 1 to 11</td><td data-label="You will be able to say">I can trace an order end to end and explain each handoff</td></tr><tr><th scope="row" data-label="The advert says">&ldquo;Sales order processing&rdquo;</th><td data-label="It actually means">Creating and confirming orders, checking stock and credit</td><td data-label="Covered in">Modules 2 and 3</td><td data-label="You will be able to say">I have processed orders including availability and credit checks</td></tr><tr><th scope="row" data-label="The advert says">&ldquo;Liaising with suppliers&rdquo;</th><td data-label="It actually means">Requisitions, purchase orders, chasing deliveries</td><td data-label="Covered in">Module 7</td><td data-label="You will be able to say">I have raised requisitions and purchase orders and handled receipts</td></tr><tr><th scope="row" data-label="The advert says">&ldquo;Stock control&rdquo;</th><td data-label="It actually means">Availability, replenishment, transfers, accuracy</td><td data-label="Covered in">Modules 6 and 8</td><td data-label="You will be able to say">I understand movement types and why stock accuracy drives everything</td></tr><tr><th scope="row" data-label="The advert says">&ldquo;Invoice queries&rdquo;</th><td data-label="It actually means">Resolving disputes between order, delivery and invoice</td><td data-label="Covered in">Modules 9 and 10</td><td data-label="You will be able to say">I can explain why an invoice was queried and how to correct it</td></tr><tr><th scope="row" data-label="The advert says">&ldquo;Attention to detail&rdquo;</th><td data-label="It actually means">You know what happens downstream when data is wrong</td><td data-label="Covered in">All modules</td><td data-label="You will be able to say">A wrong commodity code holds a shipment at the border, and here is why</td></tr><tr><th scope="row" data-label="The advert says">&ldquo;ERP or SAP experience&rdquo;</th><td data-label="It actually means">You have used a business system, not just spreadsheets</td><td data-label="Covered in">VMErp, Stages 1 and 2</td><td data-label="You will be able to say">I have worked in an ERP system (VMErp) across sales, purchasing, production, stock and billing</td></tr></tbody></table></div>
+<div class="callout"><span class="label">Why this matters more than it sounds</span><p>Most candidates read a job advert and feel unqualified, because the language is unfamiliar. The same candidate, after breaking down real adverts, reads the identical words and recognises every one of them. Nothing about their ability changed, only their ability to see what was being asked.</p></div></div></section>
+<section id="cv" class="alt" aria-labelledby="c"><div class="wrap prose">
+<h2 id="c">A CV that says what you can actually do</h2>
+<p>A CV that says &ldquo;completed a supply chain course&rdquo; gets filtered out. A CV that says what you can actually do, in the language the role uses, does not. You will be supported to build a CV that:</p>
+<ul class="tick"><li>Translates each module into concrete capability rather than course titles.</li><li>Uses the terminology from the adverts you have analysed, so screening picks it up.</li><li>Draws out the transferable experience from your previous career, reframed for supply chain.</li><li>Is tailored per application rather than sent out identically, with guidance on what to change and why.</li><li>Presents your Stage 2 employment and Stage 3 mentoring at VME as genuine work experience, because that is exactly what they are.</li><li>Describes your hands-on VMErp work in the transaction language employers use: sales orders, purchase orders, goods receipts, works orders, invoices and credit memos.</li></ul>
+<div class="callout"><span class="label">From module to CV line</span><p>Module 3, Credit Management, becomes: &ldquo;Assessed customer credit exposure against agreed limits, identifying orders requiring review before release and understanding the commercial trade-off between winning business and protecting cash.&rdquo; That is one module. There are eleven.</p></div></div></section>
+<section id="interviews" aria-labelledby="i"><div class="wrap">
+<h2 id="i">Practise saying it out loud</h2>
+<p class="lead">Knowing the answer and being able to give it under pressure are different skills. Interview support covers both.</p>
+<div class="table-wrap"><table class="stack"><caption>What interview support covers</caption><thead><tr><th scope="col">What</th><th scope="col">How it works</th></tr></thead><tbody><tr><th scope="row">Competency answers</th><td>Building structured answers from your day-to-day work at VME: real scenarios, decisions and outcomes you can describe in detail</td></tr><tr><th scope="row">Technical questions</th><td>Preparing for the process questions interviewers actually ask, drawn from the modules</td></tr><tr><th scope="row">Mock interviews</th><td>Practice sessions with feedback, so the first time you say it out loud is not in the real interview</td></tr><tr><th scope="row">Role-specific preparation</th><td>Tailored preparation for the particular job. A buyer interview is not a credit control interview</td></tr><tr><th scope="row">Questions to ask them</th><td>What to ask an employer, and what their answers tell you</td></tr><tr><th scope="row">After the interview</th><td>Reviewing what happened, and using it to strengthen the next one</td></tr></tbody></table></div>
+<div class="callout"><span class="label">The capstone is your interview material</span><p>Module 11 follows one order across all four functions: a customer order with no stock, a component shortage, a credit block and a payment query. You will have run that order yourself in VMErp, document by document. That single scenario answers most of the competency questions an entry-level supply chain interview will throw at you, because you can talk about it in genuine detail.</p></div></div></section>
+<section id="after" class="alt" aria-labelledby="a"><div class="wrap prose">
+<h2 id="a">Support that does not stop when you start work</h2>
+<p>Most programmes end when the teaching does. This one continues, because the first months in a new role are when support matters most and is least available.</p>
+<ol class="timeline">
+<li><b>While applying</b>Help identifying suitable roles, reviewing applications, and preparing for each interview</li>
+<li><b>First weeks in role</b>Someone to ask when something at work does not match what you learned, and it will not always match</li>
+<li><b>First year</b>Periodic check-ins on how the role is developing and where the gaps are</li>
+<li><b>Progression</b>Guidance on the next step: specialising, broadening, or moving towards a senior or management route</li>
+<li><b>Long term</b>Continued access to programme materials and VMErp Training as they are updated, and to the participant network</li>
+</ol>
+<div class="callout"><span class="label">An honest note</span><p>No training programme can guarantee a job, and this one does not claim to. What it can do is make sure you understand the work, can evidence that understanding, can present it well, and are not on your own while you look. Those four things are what most candidates are missing, and they are precisely what this programme provides.</p></div></div></section>
+
+<section class="cta-band" aria-labelledby="career-support-cta-h"><div class="wrap">
+<h2 id="career-support-cta-h">Learn the process. Land the job.</h2>
+<p>Eleven modules, a real business, hands-on practice in VMErp, and the CV, interview and career support to turn all of it into your first supply chain role, and the one after that.</p>
+<a class="btn" href="#/enquire">Register your interest</a>
+<p class="small">No prior experience assumed. Start at Module 0 and finish job-ready.</p></div></section></div></div>
+<div class="page" data-page="who-its-for" hidden><div class="main-inner">
+<div class="page-head"><div class="wrap"><p class="eyebrow">Who it is for</p><h1>Who this programme is for</h1><p class="lead">No prior experience is assumed. Every module begins in plain business language before it becomes specific to any function.</p></div></div>
+<section aria-labelledby="aud"><div class="wrap"><h2 id="aud">Do you recognise yourself?</h2><div class="cards c3"><div class="card top-teal"><h3>If you are&hellip; Changing career with no supply chain background</h3><p><strong>This programme gives you:</strong> A complete grounding, plus the CV and interview support to make the change credible</p></div><div class="card top-teal"><h3>If you are&hellip; Returning to work after a break</h3><p><strong>This programme gives you:</strong> Current, system-based knowledge and structured practice before you face an interview</p></div><div class="card top-teal"><h3>If you are&hellip; Already in one function and stuck</h3><p><strong>This programme gives you:</strong> The other three functions, which is usually what is blocking progression</p></div><div class="card top-teal"><h3>If you are&hellip; A recent graduate without experience</h3><p><strong>This programme gives you:</strong> Something concrete to talk about instead of coursework</p></div><div class="card top-teal"><h3>If you are&hellip; Working in the business and want to grow</h3><p><strong>This programme gives you:</strong> The full picture, and a path towards mentoring and senior roles</p></div></div></div></section>
+<section class="alt" aria-labelledby="roles"><div class="wrap">
+<h2 id="roles">Roles this prepares you for</h2>
+<p class="lead">The order-to-cash process runs through most operational roles in a supply chain function. Understanding all of it opens more doors than specialising in one part of it too early. <strong>The same skills transfer to operations, administration, customer service, finance and project-support roles in any organisation.</strong></p>
+<div class="table-wrap"><table class="stack"><caption>Role types and the modules that prepare you</caption><thead><tr><th scope="col">Role type</th><th scope="col">Where the programme prepares you</th></tr></thead><tbody><tr><th scope="row" data-label="Role type">Sales order processing / order management</th><td data-label="Where the programme prepares you">Modules 1 to 4: pricing, quotations, orders, availability, credit and delivery</td></tr><tr><th scope="row" data-label="Role type">Purchasing assistant / junior buyer</th><td data-label="Where the programme prepares you">Modules 7 and 8: sourcing, requisitions, purchase orders, goods receipt</td></tr><tr><th scope="row" data-label="Role type">Materials or production planning assistant</th><td data-label="Where the programme prepares you">Modules 5 and 6: bills of materials, planning, production orders</td></tr><tr><th scope="row" data-label="Role type">Stock and inventory administration</th><td data-label="Where the programme prepares you">Modules 6 and 8 and the bonus module: movements, transfers, accuracy</td></tr><tr><th scope="row" data-label="Role type">Shipping and logistics coordination</th><td data-label="Where the programme prepares you">Module 4 and the bonus module: routing, documentation, Incoterms, customs</td></tr><tr><th scope="row" data-label="Role type">Billing and accounts receivable</th><td data-label="Where the programme prepares you">Modules 9 and 10: invoicing, queries, collections and cash</td></tr><tr><th scope="row" data-label="Role type">Credit control</th><td data-label="Where the programme prepares you">Modules 3 and 10: limits, exposure, blocked orders, chasing payment</td></tr><tr><th scope="row" data-label="Role type">Customer service in a supply chain setting</th><td data-label="Where the programme prepares you">All modules: answering &ldquo;where is my order&rdquo; requires the whole picture</td></tr></tbody></table></div>
+<p class="fine">These are the kinds of roles the content is relevant to. They are not a promise of placement.</p>
+</div></section>
+<section class="cta-band" aria-labelledby="who-its-for-cta-h"><div class="wrap">
+<h2 id="who-its-for-cta-h">Learn the process. Land the job.</h2>
+<p>Eleven modules, a real business, hands-on practice in VMErp, and the CV, interview and career support to turn all of it into your first supply chain role, and the one after that.</p>
+<a class="btn" href="#/enquire">Register your interest</a>
+<p class="small">No prior experience assumed. Start at Module 0 and finish job-ready.</p></div></section></div></div>
+<div class="page" data-page="sponsors-employers" hidden><div class="main-inner">
+<div class="page-head"><div class="wrap"><p class="eyebrow">Sponsors and employers</p><h1>For sponsors and employers</h1><p class="lead">If you are funding a place, or considering hosting a participant, this is what the programme delivers.</p></div></div>
+<section aria-labelledby="ben"><div class="wrap"><h2 id="ben">What the programme delivers</h2><div class="cards c3"><div class="card top-teal"><h3>Cross-functional understanding</h3><p>Fewer handoff errors between Sales, Manufacturing, Purchasing and Finance</p></div><div class="card top-teal"><h3>Faster time to productivity</h3><p>Participants arrive having already run the process end to end in an ERP system (VMErp), not just read about it</p></div><div class="card top-teal"><h3>A self-sustaining model</h3><p>Stage 3 means each participant trains the next, reducing dependence on a few experienced trainers</p></div><div class="card top-teal"><h3>Consistent standards</h3><p>Everyone learns the same process, the same vocabulary and the same controls</p></div><div class="card top-teal"><h3>Retention</h3><p>People supported into a career, rather than dropped into a job, tend to stay</p></div><div class="card top-teal"><h3>A wider talent pool</h3><p>Access to capable career changers who would otherwise be screened out for lacking experience</p></div></div>
+<div class="callout"><span class="label">The cross-training argument, briefly</span><p>Most operational errors happen at the handoffs: an order priced wrong that Finance has to credit, a delivery date promised that Manufacturing cannot meet, a purchase raised too late for production. Every one of those is a failure of one function not understanding another&rsquo;s constraints. A workforce trained across all four functions makes fewer of them.</p></div></div></section>
+<section class="alt" aria-labelledby="talk"><div class="wrap two"><div><h2 id="talk">Let&rsquo;s talk</h2><p>Tell us whether you would like to fund a place or host a participant, and we will arrange a conversation.</p></div>
+<div><a class="btn" href="#/enquire/sponsor">Talk to us about sponsoring or hosting</a></div></div></section>
+</div></div>
+<div class="page" data-page="enquire" hidden><div class="main-inner">
+<div class="page-head"><div class="wrap"><p class="eyebrow">Enquire</p><h1>Start with a conversation</h1><p class="lead">Enrolment begins with a short conversation about your background, what you are aiming for, and whether this programme is genuinely the right route for you. If it is not, we will say so.</p></div></div>
+<section aria-labelledby="contact"><div class="wrap"><h2 id="contact">Get in touch any of three ways</h2>
+<p class="lead">Visit the website, email or call. Whichever you choose, the next step is a short conversation about where you are starting from.</p>
+<div class="contact-grid">
+<div class="contact-card" style="--c:var(--teal)"><h3>Visit the website</h3><span class="val">www.vmecareer.co.uk</span><p>Register your interest online.</p><a href="https://www.vmecareer.co.uk" target="_blank" rel="noopener">Open www.vmecareer.co.uk<span class="sr"> in a new tab</span></a></div>
+<div class="contact-card" style="--c:var(--sell)"><h3>Email us</h3><span class="val">admin@vmecareer.co.uk</span><p>Tell us a little about your background and what you are aiming for.</p></div>
+<div class="contact-card" style="--c:var(--amber)"><h3>Call us</h3><span class="val">07877 966243</span><p>Talk it through with the programme team.</p></div>
+</div></div></section>
+<section class="alt" aria-labelledby="how"><div class="wrap"><h2 id="how">How enrolment works</h2>
+<ol class="steps">
+<li><b>Enquire</b>Visit www.vmecareer.co.uk, email admin@vmecareer.co.uk or call 07877 966243 to register your interest</li>
+<li><b>Conversation</b>A discussion about your goals, your background and whether this fits</li>
+<li><b>Enrol</b>Confirm your place and receive Module 0, your programme materials and your VMErp Training sign-in</li>
+<li><b>Begin Stage 1</b>Start with Module 1 and work through the modules in order</li>
+</ol></div></section>
+<section aria-labelledby="fh"><div class="wrap">
+<h2 id="fh">Register your interest</h2>
+<div id="send-error" class="err-sum" hidden role="alert"><h2>Your enquiry was not sent</h2><p style="margin:0">Sorry, something went wrong and your enquiry was not sent. Please try again.</p></div>
+<form class="enq" id="enquiry-form" action="send-enquiry.php" method="post" novalidate>
+<div class="err-sum" id="error-summary" tabindex="-1" role="alert" hidden><h2>There is a problem</h2><ul id="error-list"></ul></div>
+<div class="field"><label for="name">Full name</label><input type="text" id="name" name="name" autocomplete="name" required></div>
+<div class="field"><label for="email">Email address</label><input type="email" id="email" name="email" autocomplete="email" required></div>
+<div class="field"><label for="phone">Phone number <span class="fine">(optional, unless you choose phone below)</span></label><input type="tel" id="phone" name="phone" autocomplete="tel"></div>
+<fieldset><legend>I am enquiring as</legend>
+<div class="opt"><input type="radio" id="type-individual" name="type" value="An individual interested in taking part" checked><label for="type-individual">An individual interested in taking part</label></div>
+<div class="opt"><input type="radio" id="type-sponsor" name="type" value="A sponsor or funder"><label for="type-sponsor">A sponsor or funder</label></div>
+<div class="opt"><input type="radio" id="type-employer" name="type" value="An employer or host"><label for="type-employer">An employer or host</label></div>
+<div class="opt"><input type="radio" id="type-other" name="type" value="Something else"><label for="type-other">Something else</label></div></fieldset>
+<div class="field"><label for="background">Tell us where you are starting from</label><p class="help" id="bg-help">A few sentences about your background and what you are aiming for.</p>
+<textarea id="background" name="background" maxlength="1000" aria-describedby="bg-help bg-count" required></textarea><div class="count" id="bg-count" aria-live="off">0 of 1,000 characters</div></div>
+<fieldset><legend>How would you prefer us to contact you?</legend>
+<div class="opt"><input type="radio" id="contact-email" name="contact" value="Email"><label for="contact-email">Email</label></div>
+<div class="opt"><input type="radio" id="contact-phone" name="contact" value="Phone"><label for="contact-phone">Phone</label></div></fieldset>
+<div class="field"><div class="opt"><input type="checkbox" id="consent" name="consent" value="yes" required><label for="consent">I agree to my details being used to reply to this enquiry, as described in the <a href="#/privacy">Privacy Policy</a>.</label></div></div>
+<div class="hp" aria-hidden="true"><label for="website">Leave this field empty</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
+<button class="btn" type="submit">Send enquiry</button>
+</form></div></section>
+<section class="alt" aria-labelledby="faq"><div class="wrap prose"><h2 id="faq">Frequently asked questions</h2><details class="faq"><summary>Do I need supply chain experience?</summary><div class="ans"><p>No. No prior experience is assumed and no supply chain background is required. Every module begins in plain business language before it becomes specific to any function.</p></div></details><details class="faq"><summary>Will the programme guarantee me a job?</summary><div class="ans"><p>No. No training programme can guarantee a job, and this one does not claim to. What it does is make sure you understand the work, can evidence that understanding, can present it well, and are not on your own while you look.</p></div></details><details class="faq"><summary>What is VME Pumps Ltd?</summary><div class="ans"><p>VME Pumps Ltd is the realistic simulated business you learn inside: a UK manufacturer and distributor of industrial pumps, with sites in Manchester and Birmingham, five named customers and four named suppliers. Using one business throughout means you see how a supply chain fits together, rather than meeting disconnected examples.</p></div></details><details class="faq"><summary>Do I need Excel skills?</summary><div class="ans"><p>No. If you are not confident with spreadsheets, you receive practical Excel training for day-to-day tasks, including lists, formulas, lookups, pivot tables and simple reports, and then use it on real VMErp data.</p></div></details><details class="faq"><summary>Are the skills only useful in supply chain?</summary><div class="ans"><p>No. The skills are transferable to any organisation: business process understanding, ERP and Excel, professional communication, problem-solving and team leadership are valued in operations, administration, customer service, finance and project roles in every sector.</p></div></details><details class="faq"><summary>Is this software training?</summary><div class="ans"><p>No. It is business-process training. You learn how a business sells, builds, buys and gets paid. You practise in VMErp, VME&rsquo;s own ERP system, which uses the same concepts as SAP, Dynamics and ERPNext. The aim is to understand the process, not to configure the software.</p></div></details><details class="faq"><summary>What is VMErp?</summary><div class="ans"><p>VMErp is the ERP system VME Pumps Ltd uses to run its orders, production, purchasing, stock and invoices. You work in VMErp Training, a copy of it with its own data, exercises and work instructions, so you can practise every process without affecting the live business. You receive your sign-in when you enrol.</p></div></details><details class="faq"><summary>What will I be expected to do?</summary><div class="ans"><p>Work through the modules in order, complete the practical activity in every module, take part in the job description workshops from the start, do mock interviews, and reach Stage 3 to mentor someone else. Mentoring is a requirement, not an optional extra.</p></div></details><details class="faq"><summary>Is support available after I start work?</summary><div class="ans"><p>Yes. Support continues while you apply, in your first weeks in a role, through your first year, and as you progress. You also keep access to programme materials and VMErp Training as they are updated, and to the participant network.</p></div></details><details class="faq"><summary>How do I get in touch?</summary><div class="ans"><p>Visit www.vmecareer.co.uk, email admin@vmecareer.co.uk or call 07877 966243. You can also use the enquiry form on this page.</p></div></details><details class="faq"><summary>What if the programme is not right for me?</summary><div class="ans"><p>We will say so. Enrolment begins with a conversation precisely so that you and we can decide whether this is genuinely the right route.</p></div></details></div></section>
+
+</div></div>
+<div class="page" data-page="thank-you" hidden><div class="main-inner">
+
+<section><div class="wrap prose" style="padding:3rem 0"><h1>Thank you</h1>
+<p class="lead">We have received your enquiry and will be in touch to arrange a short conversation.</p>
+<p><a class="btn" href="#/">Back to the home page</a></p></div></section>
+</div></div>
+<div class="page" data-page="privacy" hidden><div class="main-inner">
+<div class="page-head"><div class="wrap"><p class="eyebrow">Information</p><h1>Privacy Policy</h1><p class="lead">How we use the details you send us through this website.</p></div></div>
+<section><div class="wrap prose">
+<h2>What we collect</h2><p>When you use the enquiry form we collect your name, email address, optional phone number, how you are enquiring (for example as an individual, sponsor or employer), your short description of your background, and how you prefer to be contacted.</p>
+<h2>Why we collect it</h2><p>We use these details only to reply to your enquiry and to arrange a short conversation about whether the programme is right for you. We do not use them for marketing unless you separately agree to that.</p>
+<h2>Who sees it</h2><p>Your enquiry is sent to the programme team by email. We do not sell your details or share them with other organisations for their own purposes.</p>
+<h2>Cookies and tracking</h2><p>This website does not set cookies or use analytics or advertising trackers. See the <a href="#/cookies">Cookie Policy</a>.</p>
+<h2>Your rights</h2><p>You can ask us to tell you what we hold about you, to correct it, or to delete it, by replying to any email we send you. You can also complain to the Information Commissioner&rsquo;s Office (ico.org.uk) if you are unhappy with how your information has been handled.</p>
+</div></section>
+</div></div>
+<div class="page" data-page="cookies" hidden><div class="main-inner">
+<div class="page-head"><div class="wrap"><p class="eyebrow">Information</p><h1>Cookie Policy</h1><p class="lead">What this website stores on your device.</p></div></div>
+<section><div class="wrap prose">
+<p>This website does not set cookies and does not use analytics, advertising or social media tracking. Nothing is stored on your device beyond what your browser itself needs to display the pages.</p>
+<p>If this changes in future, for example if analytics are added, this page will be updated and you will be asked for your choice before anything is set.</p>
+</div></section>
+</div></div>
+<div class="page" data-page="accessibility" hidden><div class="main-inner">
+<div class="page-head"><div class="wrap"><p class="eyebrow">Information</p><h1>Accessibility Statement</h1><p class="lead">Our aim is for everyone to be able to use this website.</p></div></div>
+<section><div class="wrap prose">
+<p>We are building this website to meet the Web Content Accessibility Guidelines (WCAG) 2.2 at level AA. It can be used with a keyboard alone, works with screen readers, adapts to different screen sizes and text sizes, and respects the reduced-motion setting on your device.</p>
+<h2>Tell us about a problem</h2><p>If you find something on this website you cannot use, please tell us through the <a href="#/enquire">enquiry form</a> and we will do our best to put it right or provide the information another way.</p>
+</div></section>
+</div></div>
+<div class="page" data-page="404" hidden><div class="main-inner">
+
+<section><div class="wrap prose" style="padding:3rem 0"><h1>Page not found</h1>
+<p class="lead">Sorry, we could not find that page. It may have moved, or the address may have a typing error.</p>
+<p><a class="btn" href="#/">Go to the home page</a> <a class="btn outline-dark" href="#/programme">See what you will learn</a></p></div></section>
+</div></div>
+</main>
+<footer class="site-footer"><div class="wrap">
+<div class="cols">
+<div><p class="tagline">Learn the Process. Land the Job.</p><p>Business-process training built around one realistic business.</p></div>
+<div><h2>Explore</h2><ul><li><a href="#/programme">The Programme</a></li><li><a href="#/how-it-works">How It Works</a></li><li><a href="#/career-support">Career Support</a></li><li><a href="#/who-its-for">Who It Is For</a></li><li><a href="#/sponsors-employers">Sponsors and Employers</a></li><li><a href="#/enquire">Enquire</a></li></ul></div>
+<div><h2>Contact</h2><address>www.vmecareer.co.uk<br>admin@vmecareer.co.uk<br>07877 966243</address></div>
+<div><h2>Information</h2><ul><li><a href="#/privacy">Privacy Policy</a></li><li><a href="#/cookies">Cookie Policy</a></li><li><a href="#/accessibility">Accessibility Statement</a></li></ul></div>
+</div>
+<p class="legal">&copy; 2026 VME Pumps Supply Chain Training Programme. VME Pumps Ltd is a simulated business used for training.</p>
+</div></footer>
+<script>(function(){
+'use strict';
+document.documentElement.classList.add('js');
+/* mobile menu */
+var btn=document.getElementById('menu-btn'),nav=document.getElementById('site-nav');
+if(btn&&nav){btn.addEventListener('click',function(){var o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o?'true':'false');btn.textContent=o?'Close':'Menu';});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&nav.classList.contains('open')){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.textContent='Menu';btn.focus();}});}
+/* module filter */
+var fb=document.querySelectorAll('.filters button');
+if(fb.length){var mods=document.querySelectorAll('.mod'),live=document.getElementById('filter-status');
+fb.forEach(function(b){b.addEventListener('click',function(){
+ fb.forEach(function(x){x.setAttribute('aria-pressed','false');});b.setAttribute('aria-pressed','true');
+ var f=b.getAttribute('data-filter'),n=0;
+ mods.forEach(function(m){var show=f==='all'||m.getAttribute('data-area')===f;m.hidden=!show;if(show)n++;});
+ if(live){live.textContent='Showing '+n+(n===1?' module':' modules')+(f==='all'?'':' in '+b.textContent);}
+});});}
+/* faq: one open at a time */
+var fq=document.querySelectorAll('details.faq');
+fq.forEach(function(d){d.addEventListener('toggle',function(){if(d.open){fq.forEach(function(o){if(o!==d)o.open=false;});}});});
+/* enquiry form */
+var form=document.getElementById('enquiry-form');
+if(form){
+ var qs=new URLSearchParams(location.search);
+ if(qs.get('type')==='sponsor'){var s=document.getElementById('type-sponsor');if(s)s.checked=true;}
+ if(qs.get('error')){var eb=document.getElementById('send-error');if(eb)eb.hidden=false;}
+ var ta=document.getElementById('background'),cnt=document.getElementById('bg-count');
+ function upd(){if(ta&&cnt)cnt.textContent=ta.value.length+' of 1,000 characters';}
+ if(ta){ta.addEventListener('input',upd);upd();}
+ var errs=document.getElementById('error-summary'),list=document.getElementById('error-list');
+ function clear(){form.querySelectorAll('.err-msg').forEach(function(e){e.remove();});form.querySelectorAll('.invalid').forEach(function(e){e.classList.remove('invalid');e.removeAttribute('aria-invalid');});errs.hidden=true;list.innerHTML='';}
+ function fail(id,msg,problems){
+  var el=document.getElementById(id);var p=document.createElement('p');p.className='err-msg';p.id=id+'-err';p.textContent=msg;
+  var host=el.closest('.field')||el.closest('fieldset');host.appendChild(p);
+  if(el.tagName==='INPUT'&&el.type!=='radio'&&el.type!=='checkbox'||el.tagName==='TEXTAREA'){el.classList.add('invalid');el.setAttribute('aria-invalid','true');el.setAttribute('aria-describedby',(el.getAttribute('aria-describedby')||'')+' '+p.id);}
+  var li=document.createElement('li'),a=document.createElement('a');a.href='#'+id;a.textContent=msg;li.appendChild(a);list.appendChild(li);problems.push(id);
+ }
+ form.addEventListener('submit',function(e){
+  clear();var p=[];
+  var name=document.getElementById('name').value.trim(),email=document.getElementById('email').value.trim(),phone=document.getElementById('phone').value.trim(),bg=ta.value.trim();
+  if(!name)fail('name','Enter your full name',p);
+  if(!email)fail('email','Enter your email address',p);else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))fail('email','Enter an email address in the correct format, like name@example.com',p);
+  var pref=form.querySelector('input[name=contact]:checked');
+  if(!pref)fail('contact-email','Choose how you would like us to contact you',p);
+  else if(pref.value==='Phone'&&!phone)fail('phone','Enter a phone number, because you chose to be contacted by phone',p);
+  if(!bg)fail('background','Tell us a little about where you are starting from',p);else if(bg.length>1000)fail('background','Shorten your answer to 1,000 characters or fewer',p);
+  if(!document.getElementById('consent').checked)fail('consent','Tick the box to agree to your details being used to reply to this enquiry',p);
+  if(p.length){e.preventDefault();errs.hidden=false;errs.focus();errs.scrollIntoView({block:'center'});}
+ });
+}
+})();
+</script>
+<script>
+(function(){
+var titles={"": "Learn the Process. Land the Job. | VME Pumps Training", "programme": "What You Will Cover | VME Pumps Supply Chain Training", "how-it-works": "How It Works: Learn, Work, Mentor | VME Pumps Training", "career-support": "Career Support: CV, Interviews, Jobs | VME Pumps Training", "who-its-for": "Who It Is For | VME Pumps Supply Chain Training", "sponsors-employers": "For Sponsors and Employers | VME Pumps Training", "enquire": "Enquire | VME Pumps Supply Chain Training", "thank-you": "Thank you | VME Pumps Supply Chain Training", "privacy": "Privacy Policy | VME Pumps Supply Chain Training", "cookies": "Cookie Policy | VME Pumps Supply Chain Training", "accessibility": "Accessibility Statement | VME Pumps Training", "404": "Page not found | VME Pumps Supply Chain Training"};
+var pages=[].slice.call(document.querySelectorAll('.page'));
+var links=[].slice.call(document.querySelectorAll('.nav a, .brand'));
+function parse(){var h=location.hash;if(h.indexOf('#/')!==0)return null;var p=h.slice(2).split('/');return {slug:p[0]||'',extra:p[1]||''};}
+function show(r,initial){
+  var slug=r.slug;var has=pages.some(function(p){return p.getAttribute('data-page')===slug;});
+  if(!has)slug='404';
+  pages.forEach(function(p){p.hidden=p.getAttribute('data-page')!==slug;});
+  document.title=titles[slug]||document.title;
+  links.forEach(function(a){var t=a.getAttribute('href');if(a.closest('.nav')&&!a.classList.contains('btn')){if(t==='#/'+slug)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');}});
+  if(slug==='enquire'&&r.extra==='sponsor'){var s=document.getElementById('type-sponsor');if(s)s.checked=true;}
+  var target=null;
+  if(r.extra&&r.extra!=='sponsor')target=document.getElementById(r.extra);
+  if(slug==='enquire'&&r.extra==='sponsor')target=document.getElementById('enquiry-form');
+  if(target){target.scrollIntoView();}else{window.scrollTo(0,0);}
+  if(!initial){var m=document.getElementById('main');m.focus({preventScroll:true});}
+  var nav=document.getElementById('site-nav'),btn=document.getElementById('menu-btn');
+  if(nav&&nav.classList.contains('open')){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.textContent='Menu';}
+}
+function go(initial){var r=parse();if(r)show(r,initial);else if(!initial)return;else show({slug:'',extra:''},true);}
+window.addEventListener('hashchange',function(){go(false);});
+go(true);
+var form=document.getElementById('enquiry-form');
+if(form){form.addEventListener('submit',function(e){if(!e.defaultPrevented){e.preventDefault();location.hash='#/thank-you';}});}
+})();
+</script>
+</body>
+</html>
+
+</body></html>
